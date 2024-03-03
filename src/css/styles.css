@@ -8,3 +8,28 @@
 
 @import url('./reset.css');
 
+
+
+.btn {
+  margin-top: 50px;
+  width: 86px;
+  height: 40px;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.btn:hover {
+  background-color: #6c8cff;
+}
+
