@@ -73,28 +73,23 @@ const images = [
     },
   ];
 
-  const galleryContainer = document.querySelector('.gallery');
-  galleryContainer.innerHTML = galeryCard(images);
+const list = document.querySelector('.gallery');
+const markup = images.map(
+    images => `<li class="gallery-item">
+  <a class="gallery-link" href="${images.original}">
+    <img
+      class="gallery-image"
+      src="${images.preview}"
+      alt="${images.description}"
+    />
+  </a>
+</li>`
+  )
+  .join('');
 
-  function galeryCard(images){
-    return images.map(
-        ({ preview, original , description }) => `
-          <li class="gallery-item">
-            <a class="gallery-link" href="${original}">
-              <img
-                class="gallery-image"
-                src="${preview}"
-                alt="${description}"
-              />
-            </a>
-          </li>
-        `
-      )
-      .join('');
+list.innerHTML = markup;
 
-      
-  }
-  const lightbox = new SimpleLightbox('.gallery a', {captionsData: 'alt',
-  captionDelay: 250,});
-
-  
+new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
